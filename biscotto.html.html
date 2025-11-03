@@ -11,16 +11,15 @@
   <meta name="theme-color" content="#0cc0df" />
   <style>
     :root{
-      /* ——— Synergia Brand Palette ——— */
-      --brand-primary:#0cc0df;  /* cyan */
-      --brand-green:#72e8a8;    /* mint */
-      --brand-yellow:#eff698;   /* light yellow */
-      --brand-lilac:#e5d0fd;    /* lilac */
+      --brand-primary:#0cc0df;
+      --brand-green:#72e8a8;
+      --brand-yellow:#eff698;
+      --brand-lilac:#e5d0fd;
 
-      --bg:#f7fbfe; 
-      --panel:#ffffff; 
-      --ink:#1f2937; 
-      --muted:#5b6472; 
+      --bg:#f7fbfe;
+      --panel:#ffffff;
+      --ink:#1f2937;
+      --muted:#5b6472;
       --accent:var(--brand-primary);
       --ring:#dbe7f3;
     }
@@ -38,7 +37,7 @@
       padding:28px; border:1px solid var(--ring);
     }
     .brand{display:flex; align-items:center; gap:12px; color:var(--muted); font-size:14px; letter-spacing:.2px}
-    .brand .logo{height:28px; width:auto; display:block}
+    .brand .logo{height:32px; width:auto; display:block}
     .swatch{display:inline-flex; gap:6px; margin-left:auto}
     .swatch i{width:12px; height:12px; border-radius:3px; display:inline-block}
     .swatch i.c1{background:var(--brand-primary)}
@@ -67,12 +66,12 @@
 <body>
   <main class="card" role="region" aria-labelledby="title">
     <div class="brand" aria-label="Synergia">
-      <img class="logo" src="logo-synergia.png" alt="Synergia" />
+      <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAQACAYAAAB/HSuDAACvZGNhQlgAAK9kanVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAANvtqdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOjNjZTg4MmUzLTZkZW" alt="Synergia" />
       <span>Synergia • Biscotto della fortuna</span>
       <span class="swatch" aria-hidden="true"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i></span>
     </div>
-    <h1 id="title">Apri il biscotto</h1>
-    <p class="sub">Messaggi brevi ispirati ai valori e alla voce di Synergia: saggezza, esplorazione, autorevolezza mite.</p>
+    <h1 id="title">Ecco il tuo biscotto della fortuna digitale!</h1>
+    <p class="sub">Ogni messaggio riflette i valori che orientano il lavoro di Synergia a supporto dei sistemi di welfare, promuovendo conoscenza, innovazione e collaborazione tra persone, enti e territori.</p>
 
     <div id="fortune" class="fortune" role="status" aria-live="polite">…</div>
     <div class="meta"><span id="counter">—</span><span>•</span><span id="code">ID: —</span></div>
