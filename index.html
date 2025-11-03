@@ -4,18 +4,27 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Synergia • Biscotto della fortuna</title>
-  <meta name="description" content="Apri il biscotto della fortuna digitale di Synergia e scopri un messaggio ispirato ai nostri valori!" />
+  <meta name="description" content="Apri il biscotto della fortuna digitale di Synergia e scopri un messaggio ispirato ai nostri valori." />
   <meta property="og:title" content="Biscotto della fortuna • Synergia" />
   <meta property="og:description" content="Scopri un messaggio ispirato ai valori di Synergia." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#0cc0df" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-042WEXMMMZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-042WEXMMMZ');
+  </script>
+
   <style>
     :root{
       --brand-primary:#0cc0df;
       --brand-green:#72e8a8;
       --brand-yellow:#eff698;
       --brand-lilac:#e5d0fd;
-
       --bg:#f7fbfe;
       --panel:#ffffff;
       --ink:#1f2937;
@@ -34,22 +43,25 @@
     }
     .card{
       width:min(720px, 100%); background:var(--panel); border-radius:20px; box-shadow:0 10px 30px rgba(2,8,23,.06);
-      padding:28px; border:1px solid var(--ring);
+      padding:32px 28px 20px 28px; border:1px solid var(--ring);
+      display:flex; flex-direction:column; align-items:center;
     }
-    .brand{display:flex; align-items:center; gap:12px; color:var(--muted); font-size:14px; letter-spacing:.2px}
-    .brand .logo{height:32px; width:auto; display:block}
-    .swatch{display:inline-flex; gap:6px; margin-left:auto}
+    .brand{display:flex; flex-direction:column; align-items:center; gap:8px; color:var(--muted); font-size:14px; letter-spacing:.2px; margin-bottom:8px;}
+    .brand .logo{height:56px; width:auto; display:block;}
+    .swatch{display:flex; gap:6px; margin-top:4px;}
     .swatch i{width:12px; height:12px; border-radius:3px; display:inline-block}
     .swatch i.c1{background:var(--brand-primary)}
     .swatch i.c2{background:var(--brand-green)}
     .swatch i.c3{background:var(--brand-yellow)}
     .swatch i.c4{background:var(--brand-lilac)}
-    h1{font-size:clamp(22px, 2.6vw, 28px); margin:14px 0 8px}
-    p.sub{margin:0; color:var(--muted)}
+    h1{text-align:center; font-size:clamp(22px, 2.6vw, 28px); margin:14px 0 8px}
+    p.sub{text-align:center; margin:0; color:var(--muted); max-width:600px;}
     .fortune{
       margin:28px 0; padding:24px; border-radius:16px; border:1px dashed #d3e1ee; background:#f9fbff;
       font-size:clamp(18px, 2.2vw, 22px); line-height:1.5; font-weight:600;
+      opacity:0; transition:opacity .6s ease;
     }
+    .fortune.visible{opacity:1;}
     .meta{display:flex; align-items:center; gap:12px; color:var(--muted); font-size:14px}
     .actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
     button{
@@ -59,7 +71,9 @@
     }
     button.primary{background:var(--accent); color:white}
     button:active{transform:translateY(1px)}
-    .small{font-size:13px; color:var(--muted); margin-top:18px}
+    footer{margin-top:28px; font-size:13px; color:var(--muted); text-align:center; border-top:1px solid var(--ring); padding-top:10px; width:100%;}
+    footer a{color:var(--muted); text-decoration:none;}
+    footer a:hover{text-decoration:underline;}
     .hidden{display:none}
   </style>
 </head>
@@ -82,21 +96,21 @@
       <button id="btn-share" class="hidden" title="Condividi">Condividi…</button>
     </div>
 
-    <p class="small">Suggerimento: inquadra il QR code che porta a questa pagina. Ogni apertura può mostrare una fortuna diversa. Usa il tasto “Copia link” per condividere esattamente questa.</p>
+    <footer>© Synergia s.r.l. – <a href="https://www.synergia-net.it" target="_blank" rel="noopener noreferrer">www.synergia-net.it</a></footer>
   </main>
 
   <script>
     const fortunes = [
-      "La conoscenza non serve a vincere, ma a capire meglio insieme. 💭",
-      "Ogni sistema può cambiare, basta guardarlo da una prospettiva diversa. 🔍",
-      "Le soluzioni più solide crescono dove le persone si ascoltano. 🤝",
+      "La conoscenza non serve a vincere, ma a capire meglio il mondo. 💭",
+      "Ogni sistema può cambiare in meglio, basta guardarlo da una prospettiva diversa. 🔍",
+      "Le soluzioni più solide crescono là dove le persone si ascoltano. 🤝",
       "Dietro ogni dato c’è una storia, e dietro ogni storia un’occasione di comprensione. 💡",
       "Chi guida bene, illumina anche la strada degli altri. 🌟",
       "La complessità non va semplificata: va capita. 🧭",
       "Ogni esplorazione è un atto di fiducia: nel mondo, e in chi lo abita. 🌍",
       "Il futuro non si predice: si costruisce insieme, un progetto alla volta. 🌱",
       "Ogni dato nasconde una storia: se la si ascolta, si trasforma in cambiamento. 💡",
-      "Il benessere nasce quando una comunità si prende cura di tutte le persone che la compongono. ❤",
+      "Il benessere nasce quando una comunità si prende cura di tutte persone che la compongono. ❤",
       "L’innovazione sociale è una forma d’amore per il futuro. 🌍",
       "La sinergia è forza: insieme, le differenze diventano risorse. 🤝"
     ];
@@ -117,8 +131,14 @@
     }
 
     function render(idx){
-      const text = fortunes[idx];
-      $('#fortune').textContent = text;
+      const el = $('#fortune');
+      el.classList.remove('visible');
+      setTimeout(()=>{
+        const text = fortunes[idx];
+        el.textContent = text;
+        el.classList.add('visible');
+      }, 150);
+
       $('#counter').textContent = `Messaggio ${idx+1} di ${fortunes.length}`;
       $('#code').textContent = `ID: ${idx}`;
 
